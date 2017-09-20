@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<ctype.h>
 #define N 256
-int maiin()
+int main()
 {
     char frase[N];
     int i;

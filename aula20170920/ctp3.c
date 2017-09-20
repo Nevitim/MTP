@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<ctype.h>
 #define N 256
-int maiin()
+int main()
 {
     char frase[N];
     int i, m=0;
@@ -11,6 +11,6 @@ int maiin()
     for(i=0; frase[i]; i++)
         if(isalpha(frase[i]))
             m++;
-    printf("%s", frase);
+    printf("%i", m);
     return EXIT_SUCCESS;
 }

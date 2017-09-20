@@ -1,16 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-#define N 256
-int maiin()
+int main()
 {
-    float x1, x2, y1, y2, distancia;
-    printf("entre com as cordenadas (x1,y1):\n");
-    scanf("%f,%f", &x1, &y1);
-    printf("entre com as cordenadas (x2,y2):\n");
-    scanf("%f,%f", &x2, &y2);
-    distancia=sqrt(pow(x2-x1,2)+pow(y2-y1,2));
-    printf("A distancia eh; %f\n", distancia);
+    float x, a, b, c, aj;
+    printf("Digite os lados (a,b):\n");
+    scanf("%f,%f", &a, &b);
+    printf("digite ao angulo em radianos (x):\n");
+    scanf("%f", &x);
+    aj=x;
+    c=sqrt(pow(a,2)+pow(b,2)-2*a*b*cos(aj));
+    printf("o lado eh; %f\n", c);
     return EXIT_SUCCESS;
 }
 

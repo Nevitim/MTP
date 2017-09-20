@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 #define N 256
-int maiin()
+int main()
 {
     float x1, x2, y1, y2, distancia;
     printf("entre com as cordenadas (x1,y1):\n");
