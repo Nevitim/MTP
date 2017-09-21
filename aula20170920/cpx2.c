@@ -18,18 +18,16 @@ void mostracomplexo(double complex z,char c)
 int main()
 {
     double complex z1, z2;
-    double a, b,c ,d;
+    double a,b;
     printf("entre com um numero complexo z1 (real, imaginario:\n");
     scanf("%lf,%lf", &a, &b);
     z1=fazcomplexo(a, b, 'r');
-    printf("entre com um numero complexo z1 (real, imaginario:\n");
-    scanf("%lf,%lf", &c, &d);
-    z2=fazcomplexo(c, d, 'r');
+    z2 = conj(z1);
     printf("A soma desses numeros:\n");
     printf("A forma retangular:\n");
-    mostracomplexo(z1+z2,'r');
+    mostracomplexo(z1*z2,'r');
     printf("A forma polar:\n");
-    mostracomplexo(z1+z2,'P');
+    mostracomplexo(z1*z2,'P');
     return EXIT_SUCCESS;
 }
 
