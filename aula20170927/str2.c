@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 #include<ctype.h>
 #define n 256
 int main()
@@ -24,5 +25,5 @@ for(i=0;tot[i]!='\0';i++)
     }
 }
 printf("numero de vogais:%i\n numero de consoantes:%i\n numero de digitos:%i\n numero de espaco:%i\n", v, c, d, e);
-return 0;
+return EXIT_SUCCESS;
 }

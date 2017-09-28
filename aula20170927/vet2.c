@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main()
 {
 int num[10]={0};
@@ -16,5 +17,5 @@ for(i=0, l=9;i<=5;i++,l--)
 }
 for(i=0;i<10;i++)
      printf("Nova versao:%i\n", num[i]);
-return 0;
+return EXIT_SUCCESS;
 }

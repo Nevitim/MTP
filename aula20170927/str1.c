@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
+#include<stdlib.h>
 #define n 256
 int main()
 {
@@ -27,5 +28,6 @@ else
     printf("%s\n", msg);
     }
 }
-return 0;
+
+return EXIT_SUCCESS;
 }

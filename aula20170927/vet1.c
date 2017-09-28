@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdlib.h>
 #include<time.h>
 #define n 10000
 int main()
@@ -17,6 +18,5 @@ for(i=0;i<n;i++)
 }
 media/=n;
 printf("A media dos numeros eh:%f\n",media);
-
 return EXIT_SUCCESS;
 }

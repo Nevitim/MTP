@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main()
 {
 int num[10];
@@ -14,6 +15,6 @@ for(i=0;i<10;i++)
     mult*=num[i];
 }
     printf("A soma eh:%i\n o produto eh %i:\n", soma, mult);
-return 0;
+return EXIT_SUCCESS;
 }
 
