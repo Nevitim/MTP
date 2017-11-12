@@ -3,31 +3,29 @@
 #include <string.h>
 #include <locale.h>
 #include <time.h>
-
-void printar(int l, int c)
+void arteabstrata(int l, int c, char caract[])
 {
-    char olhaessamerda[] = { ": $ # $ : 4 b . ' :. : $ # $: 4b. ':."};
-    int i=0, j=0, n=0;
-    for(;i<l;i++)
+    int i=0, j=0, a=0;
+    for(i=0;i<l;i++)
     {
         printf("\n");
-        for(;j<c;j++)
+        for(j=0;j<c;j++)
         {
-            n=rand()%38;
-            printf("%s", olhaessamerda[n]);
+            a=rand()%strlen(caract);
+            printf("%c", caract[a]);
         }
     }
-    printf("\n");
 }
-
 int main()
 {
     srand(time(0));
     setlocale(LC_ALL, "Portuguese");
-    int c=0, l=0;
-    printf("entre com o numero de linhas e colunas (l,c): ");
+    int c=0, l=0, a=0, i=0, j=0;
+    char caract[] = ": $ # $ : 4 b . ' :. : $ # $: 4b. ':.";
+    printf("Write the numbers of line e columnar (linhas,colunas): ");
     scanf("%d,%d", &l, &c);
     getchar();
-    printar(l,c);
+    arteabstrata(l,c, caract);
+    printf("\n\n\n\n\n");
     return EXIT_SUCCESS;
 }

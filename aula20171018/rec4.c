@@ -10,10 +10,9 @@ void soma(int A[], int n, int B[], int m)
 }
 int main()
 {
-    int A[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31};
-    int n = sizeof(A)/sizeof(int);
-    int B[] = {1, 2, 3, 4, 5, 6, 8, 10, 12, 7, 29};
-    int m = sizeof(B)/sizeof(int);
+    double A[] = {1.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 17.0, 19.0, 21.0, 23.0, 25.0, 27.0, 29.0, 31.0};
+    double B[] = {0.5, 0.25, 0.125, 0.0625, 0.5, 0.25, 0.125, 0.0625, 0.5, 0.25, 0.125, 0.0625, 0.5, 0.25, 0.125, 0.0625};
+    int n = sizeof(A)/sizeof(double);
     soma(A,n,B,m);
     return EXIT_SUCCESS;
 }
