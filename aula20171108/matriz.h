@@ -1,9 +1,9 @@
 #ifndef MATRIZ_H
 #define MATRIZ_H
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
 
 typedef
 	struct aMatriz {
@@ -30,8 +30,7 @@ void destruirMatriz(Matriz A) {
 	free(A.m);
 }
 
-void preencherMatriz(Matriz A)
-{
+void preencherMatriz(Matriz A) {
 	int i, j;
 	for(i = 0; i < A.lin; i++)
 		for(j = 0; j < A.col; j++) {
@@ -104,31 +103,47 @@ double determinante(Matriz A) {
 	}
 	return det;
 }
-Matriz comatriz(Matriz A)
-{
-    Matriz c= criarMatriz(A.lin,A.col);
-    int i,j;
-	for(i = 0; i < A.col; i++)
-		for(j = 0; j < A.lin; j++)
-			c.m[i][j] = cofator(A,i,j);
-    return c;
+Matriz comatriz(Matriz A){
+Matriz C=criarMatriz(A.lin,A.col);
+int i,j;
+for(i=0; i<A.lin; i++)
+    for(j=0; j<A.col; j++)
+    C.m[i][j]=cofator(A,i,j);
+return C;
 }
-Matriz adjunta(Matriz A)
+
+Matriz producted (Matriz A, Matriz B, Matriz C, int linhaA,int colunaA, int linhaB,int colunaB)
 {
-    Matriz c = comatriz(A);
-    Matriz ct = transposta(c);
-    destruirMatriz(c);
-    return ct;
+int i,j,k;
+double acumula;
+for(k=0; k<linhaA; k++){
+    for(j=0; j<colunaB; j++){
+        acumula=0;
+    for(i=0; i<colunaA; i++){
+    acumula= acumula+A.m[k][i]*B.m[i][j];
+    }
+    C.m[k][j]= acumula;
+    }
 }
-Matriz inversa(Matriz A)
-{
-    Matriz au= criarMatriz(A.lin,A.col);
-    Matriz a= adjunta(A);
-    int i,j, de;
-    de = determinante(A);
-	for(i = 0; i < A.col; i++)
-		for(j = 0; j < A.lin; j++)
-			au[i][j] =(a[i][j])/de);
-    return au;
+return C;
 }
+
+Matriz adjunta(Matriz A){
+Matriz C=comatriz(A);
+Matriz Ct=transposta(C);
+destruirMatriz(C);
+return Ct;
+}
+
+Matriz Inversa(Matriz A, Matriz Ct, double det){
+Matriz I=criarMatriz(A.lin, A.col);
+int i,j;
+for(i=0; i<A.lin;i++){
+for(j=0; j<A.col; j++){
+I.m[i][j]=(1/det)*(Ct.m[i][j]);
+}
+}
+return I;
+}
+
 #endif

@@ -1,20 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 #include "matriz.h"
 
-int main()
-{
-	Matriz A, At;
-	int nlin, ncol;
-	printf("Entre com o numero de linhas e o numero de colunas: ");
-	scanf("%d", &nlin);
-	scanf("%d", &ncol);
-	A = criarMatriz(nlin, ncol);
-	preencherMatriz(A);
-	imprimirMatriz(A);
-	At = inversa(A);
-	imprimirMatriz(At);
-	destruirMatriz(A);
-	destruirMatriz(At);
-	return EXIT_SUCCESS;
+int main(){
+Matriz A;
+double a;
+int ordem;
+printf("write array order :  ");
+scanf("%d", &ordem);
+A=criarMatriz(ordem,ordem);
+preencherMatriz(A);
+printf("Original: \n");
+imprimirMatriz(A);
+a= determinante(A);
+printf("The Determinant is:\t%lf", a);
+return EXIT_SUCCESS;
 }

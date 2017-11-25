@@ -1,20 +1,27 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-#define n 1000
-#define m 1000
 int main()
 {
-    char rec[n];
-    int i;
+    char * rec;
+    int i=0;
+    rec=(char*)malloc(1*sizeof(char));
     printf("write one phrase:\n");
-    scanf("%s",&rec);
-    for(i=0;i<n;i++)
-        if(rec[i]==' ')
+    while(1)
         {
-            rec[i]='\0';
-            break;
+            scanf("%c", rec+i);
+            rec= (char *)realloc(rec, sizeof(char)*1);
+            if(*(rec+i)==' ')
+                break;
+            i++;
         }
+        *(rec+i)='\0';
+            while(i>=0)
+    {
+        *(rec+i)= toupper(*(rec+i));
+        i--;
+    }
         printf("***%s",rec);
+        free(rec);
     return EXIT_SUCCESS;
 }
