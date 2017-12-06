@@ -11,7 +11,7 @@ int main()
         {
             scanf("%c", rec+i);
             rec= (char *)realloc(rec, sizeof(char)*1);
-            if(*(rec+i)==' ')
+            if(*(rec+i)==' '||*(rec+i)=='\n')
                 break;
             i++;
         }

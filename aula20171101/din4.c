@@ -1,10 +1,15 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-#define n 1000
-#define m 1000
 void preenche(float * elemento);
 void imprime(float **matriz, int N, int M);
+double determinante(float **Matriz, int N)
+{
+	double det = 0;
+	int i ;
+		det=((Matriz[0][N]*Matriz[1][N+1])-(Matriz[0][N+1]*Matriz[1][N]));
+	return det;
+}
 
 int main() {
   int i, j;
@@ -24,7 +29,6 @@ int main() {
     }
     }
   imprime(matriz, N, M);
-  transposta(matriz, N, M);
   for(i = 0; i < N; i++)
 	free(matriz[i]);
   free(matriz);
