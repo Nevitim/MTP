@@ -4,7 +4,7 @@
 int main()
 {
     unsigned char *ponteiro;
-    int vetor[]={0x0F,0xFF,0xFFFF,4,8,16,1025}, i,nbytes=sizeof(vetor), cont=0;
+    int vetor[]={0,1,2,4,8,16,1025}, i,nbytes=sizeof(vetor), cont=0;
     printf("End inicial de vetor:%p\n\n", vetor);
     for(i=0, ponteiro=(unsigned char*)vetor; i<nbytes; i++)
     {

@@ -24,4 +24,3 @@ int main()
         printf("___ERRO___");
     return EXIT_SUCCESS;
 }
-

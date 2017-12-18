@@ -4,7 +4,7 @@
 typedef unsigned char byte;
 typedef unsigned short int word;
 typedef unsigned int dword;
-typedef struct stPixel { byte B; byte G; byte R; } Pixel;
+typedef struct stPixel { byte B; byte R; byte G; } Pixel;
 typedef struct stHeaderBMP24bpp {
 	byte identificador[2];
 	dword tam_arquivo;

@@ -1,49 +1,73 @@
-#include<stdlib.h>
 #include<stdio.h>
-#include<math.h>
-void preenche(float * elemento);
-void imprime(float **matriz, int N, int M);
-double determinante(float **Matriz, int N)
+#include<stdlib.h>
+#define N 200
+struct ponto
 {
-	double det = 0;
-	int i ;
-		det=((Matriz[0][N]*Matriz[1][N+1])-(Matriz[0][N+1]*Matriz[1][N]));
-	return det;
+int x;
+int y;
+};
+struct poligono
+{
+int vertices;
+struct ponto colecao[N];
+}a;
+
+struct poligono Preenche(double a)
+{
+int i;
+printf("Digite a quantidade de vertices: ");
+scanf("%lf", &a.vertices);
+int c=a.vertices;
+printf("Digite a colecao de pontos na forma (x,y): \n\n");
+for(i=0; i<c; i++)
+{
+scanf("%d", &a.colecao[i].x);
+scanf("%d", &a.colecao[i].y);
+}
+return a;
+}
+int areac (double a, double *coordenadas)
+{
+int k,j,area=0;
+k=1;
+for(j=0; j<a.vertices-1; j++)
+{
+area=area+(a.colecao[j].x * a.colecao[k].y - a.colecao[k].x*a.colecao[j].y);
+k++;
+}
+printf("\n A area do poligono e %d :", area/2);
+coordenadas[0]=0;
+coordenadas[1]=0;
 }
 
-int main() {
-  int i, j;
-  int N, M;
-  float **matriz;
-  printf("How much vertices there are at polygon: ");
-  scanf("%d", &N);
-  M=N;
-  matriz = calloc(N,sizeof(float*));
-  for(i = 0; i < N; i++)
-    {
-	matriz[i] = calloc(M,sizeof(float));
-    for(j = 0; j < M; j++)
-    {
-      printf("Element (%d,%d): ", i, j);
-      preenche(&matriz[i][j]);
-    }
-    }
-  imprime(matriz, N, M);
-  for(i = 0; i < N; i++)
-	free(matriz[i]);
-  free(matriz);
-  return 0;
+void centroide(double a, double *coordenadas)
+{
+int i,j;
+for(i=0; i<1; i++){
+for(j=0; j<a.vertices; j++)
+{
+coordenadas[0]= coordenadas[0]+a.colecao[j].x;
+coordenadas[1]= coordenadas[1]+a.colecao[j].y;
+}
+coordenadas[0]=coordenadas[0]/a.vertices;
+coordenadas[1]=coordenadas[1]/a.vertices;
 }
 
-void preenche(float * elemento)
+printf("\n Coordenadas do centroide(x,y): \n\n");
+for(i=0; i<2; i++)
 {
-  scanf("%f", elemento);
+ printf("%lf ", coordenadas[i]);
 }
-void imprime(float **matriz, int N, int M)
+}
+
+int main()
 {
-  int i, j;
-  printf("matrix %dx%d:\n", N, M);
-  for(i = 0; i < N; i++)
-    for(j = 0; j < M; j++)
-      printf("%g%c", matriz[i][j], (j == M-1)? '\n':'\t');
+int const p = 2;
+double coordenadas[p];
+int i=0,j,k,area=0;
+double a;
+a=Preenche(a);
+area=areac(a,&coordenadas);
+centroide(a,&coordenadas);
+return 0;
 }

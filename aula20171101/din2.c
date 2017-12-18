@@ -5,7 +5,7 @@
 #define m 1000
 void preenche(float * elemento);
 void imprime(float **matriz, int N, int M);
-
+void transposta(float **matriz, int M, int N);
 int main() {
   int i, j;
   int N, M;

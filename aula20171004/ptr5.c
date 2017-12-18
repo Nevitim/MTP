@@ -18,15 +18,12 @@ int main()
 
     for(j=0; j<1000;j++,bytes+=4){
 
-        if(*bytes==escolha){
-
+        if(*bytes==escolha)
+            {
             printf("0x%p : %d\n",bytes,*bytes);
-            cont[k]=bytes;
+            cont[k]=*bytes;
             k++;
-
-
-        }
-
+            }
 
     }
 

@@ -5,14 +5,14 @@ int main()
 {
     int *ponteiro,*pontero,*ponteir;
     int i,nbytes, cont=0, oi;
-    printf("-Entre com dois numeros: a,b\n");
-    scanf("%d, %d", &nbytes, &oi);
+    printf("-Entre com dois numeros: a;b\n");
+    scanf("%d; %d", &nbytes, &oi);
     cont=nbytes+oi;
     ponteiro=&nbytes;
-    printf("*End:%p=>%d(decimal)\n",ponteiro,nbytes,nbytes);
+    printf("*End:0x%p=>%d(decimal)\n",ponteiro,nbytes,nbytes);
     pontero=&oi;
-    printf("*End:%p=>%d(decimal)\n",pontero,oi,oi);
+    printf("*End:0x%p=>%d(decimal)\n",pontero,oi,oi);
     ponteir=&cont;
-    printf("*End:%p=>%d(decimal)\n",ponteir,cont,cont);
+    printf("*End:0x%p=>%d(decimal)\n",ponteir,cont,cont);
     return EXIT_SUCCESS;
 }
